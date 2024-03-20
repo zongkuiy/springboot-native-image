@@ -1,0 +1,520 @@
+[
+    {
+        "name": "com.mysql.jdbc.Driver",
+        "methods":
+        [
+            {
+                "name": "<init>",
+                "parameterTypes":
+                []
+            }
+        ]
+    },
+    {
+        "name": "java.util.ArrayList",
+        "methods":
+        [
+            {
+                "name": "<init>",
+                "parameterTypes":
+                []
+            }
+        ]
+    },
+    {
+        "name": "java.util.HashSet",
+        "allDeclaredMethods": true,
+        "allDeclaredConstructors": true
+    },
+    {
+        "name": "java.util.LinkedHashSet",
+        "methods":
+        [
+            {
+                "name": "<init>",
+                "parameterTypes":
+                []
+            }
+        ]
+    },
+    {
+        "name": "java.sql.Date",
+        "condition":
+        {
+            "typeReachable": "java.sql.Date"
+        },
+        "methods":
+        [
+            {
+                "name": "toLocalDate",
+                "parameterTypes":
+                []
+            },
+            {
+                "name": "valueOf",
+                "parameterTypes":
+                [
+                    "java.time.LocalDate"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "org.slf4j.bridge.SLF4JBridgeHandler"
+    },
+
+
+    {
+        "name": "com.nativeapp.demo.NativeApp",
+        "allDeclaredMethods": true,
+        "allPublicMethods": true,
+        "queryAllDeclaredMethods": true,
+        "queriedMethods":
+        [
+            {
+                "name": "<init>",
+                "parameterTypes":
+                []
+            }
+        ]
+    },
+    {
+        "name": "org.yaml.snakeyaml.Yaml",
+        "condition":
+        {
+            "typeReachable": "org.springframework.boot.env.YamlPropertySourceLoader"
+        }
+    },
+
+    {
+        "name": "ch.qos.logback.core.rolling.helper.IntegerTokenConverter",
+        "allPublicConstructors": true
+    },
+
+    {
+        "name": "byte[]"
+    },
+    {
+        "name": "ch.qos.logback.classic.encoder.PatternLayoutEncoder",
+        "allPublicMethods": true,
+        "methods":
+        [
+            {
+                "name": "<init>",
+                "parameterTypes":
+                []
+            }
+        ]
+    },
+    {
+        "name": "ch.qos.logback.classic.pattern.DateConverter",
+        "methods":
+        [
+            {
+                "name": "<init>",
+                "parameterTypes":
+                []
+            }
+        ]
+    },
+    {
+        "name": "ch.qos.logback.classic.pattern.LevelConverter",
+        "methods":
+        [
+            {
+                "name": "<init>",
+                "parameterTypes":
+                []
+            }
+        ]
+    },
+    {
+        "name": "ch.qos.logback.classic.pattern.LineSeparatorConverter",
+        "methods":
+        [
+            {
+                "name": "<init>",
+                "parameterTypes":
+                []
+            }
+        ]
+    },
+    {
+        "name": "ch.qos.logback.classic.pattern.LoggerConverter",
+        "methods":
+        [
+            {
+                "name": "<init>",
+                "parameterTypes":
+                []
+            }
+        ]
+    },
+    {
+        "name": "ch.qos.logback.classic.pattern.MessageConverter",
+        "methods":
+        [
+            {
+                "name": "<init>",
+                "parameterTypes":
+                []
+            }
+        ]
+    },
+    {
+        "name": "ch.qos.logback.classic.pattern.ThreadConverter",
+        "methods":
+        [
+            {
+                "name": "<init>",
+                "parameterTypes":
+                []
+            }
+        ]
+    },
+    {
+        "name": "ch.qos.logback.core.ConsoleAppender",
+        "allPublicMethods": true,
+        "methods":
+        [
+            {
+                "name": "<init>",
+                "parameterTypes":
+                []
+            }
+        ]
+    },
+
+
+    {
+        "name": "com.sun.crypto.provider.HmacCore$HmacSHA512",
+        "methods":
+        [
+            {
+                "name": "<init>",
+                "parameterTypes":
+                []
+            }
+        ]
+    },
+    {
+        "name": "com.sun.jndi.dns.DnsContextFactory",
+        "allDeclaredMethods": true,
+        "allPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true,
+        "allDeclaredClasses": true,
+        "allPublicClasses": true
+    },
+    {
+        "name": "com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl",
+        "methods":
+        [
+            {
+                "name": "<init>",
+                "parameterTypes":
+                []
+            }
+        ]
+    },
+    {
+        "name": "java.io.FileDescriptor"
+    },
+    {
+        "name": "java.io.FilePermission"
+    },
+    {
+        "name": "java.io.IOException"
+    },
+    {
+        "name": "java.io.Serializable",
+        "allDeclaredMethods": true
+    },
+    {
+        "name": "java.lang.Comparable",
+        "allDeclaredMethods": true
+    },
+    {
+        "name": "java.lang.Double",
+        "allDeclaredFields": true,
+        "allDeclaredMethods": true,
+        "allDeclaredConstructors": true
+    },
+    {
+        "name": "java.lang.Number",
+        "allDeclaredFields": true,
+        "allDeclaredMethods": true
+    },
+    {
+        "name": "java.lang.OutOfMemoryError"
+    },
+    {
+        "name": "java.lang.RuntimeException"
+    },
+    {
+        "name": "java.lang.RuntimePermission"
+    },
+    {
+        "name": "java.lang.Thread",
+        "fields":
+        [
+            {
+                "name": "contextClassLoader"
+            },
+            {
+                "name": "inheritableThreadLocals"
+            },
+            {
+                "name": "threadLocals"
+            }
+        ]
+    },
+    {
+        "name": "java.lang.constant.Constable",
+        "allDeclaredMethods": true
+    },
+    {
+        "name": "java.lang.constant.ConstantDesc",
+        "allDeclaredMethods": true
+    },
+    {
+        "name": "java.lang.management.ManagementFactory",
+        "methods":
+        [
+            {
+                "name": "getRuntimeMXBean",
+                "parameterTypes":
+                []
+            }
+        ]
+    },
+    {
+        "name": "java.lang.management.RuntimeMXBean",
+        "methods":
+        [
+            {
+                "name": "getInputArguments",
+                "parameterTypes":
+                []
+            },
+            {
+                "name": "getName",
+                "parameterTypes":
+                []
+            }
+        ]
+    },
+    {
+        "name": "java.net.InetSocketAddress"
+    },
+    {
+        "name": "java.net.NetPermission"
+    },
+    {
+        "name": "java.net.PortUnreachableException"
+    },
+    {
+        "name": "java.net.SocketPermission"
+    },
+    {
+        "name": "java.net.URLPermission",
+        "methods":
+        [
+            {
+                "name": "<init>",
+                "parameterTypes":
+                [
+                    "java.lang.String",
+                    "java.lang.String"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "java.nio.Bits",
+        "fields":
+        [
+            {
+                "name": "UNALIGNED"
+            }
+        ]
+    },
+    {
+        "name": "java.nio.Buffer",
+        "fields":
+        [
+            {
+                "name": "address"
+            }
+        ]
+    },
+    {
+        "name": "java.nio.ByteBuffer",
+        "methods":
+        [
+            {
+                "name": "alignedSlice",
+                "parameterTypes":
+                [
+                    "int"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "java.nio.DirectByteBuffer",
+        "methods":
+        [
+            {
+                "name": "<init>",
+                "parameterTypes":
+                [
+                    "long",
+                    "int"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "java.nio.channels.ClosedChannelException"
+    },
+    {
+        "name": "java.nio.channels.FileChannel"
+    },
+    {
+        "name": "java.security.AllPermission"
+    },
+    {
+        "name": "java.security.MessageDigestSpi"
+    },
+    {
+        "name": "java.security.SecureRandomParameters"
+    },
+    {
+        "name": "java.security.SecurityPermission"
+    },
+    {
+        "name": "java.util.PropertyPermission"
+    },
+    {
+        "name": "javax.management.ObjectName"
+    },
+    {
+        "name": "javax.net.ssl.SSLEngine",
+        "methods":
+        [
+            {
+                "name": "getApplicationProtocol",
+                "parameterTypes":
+                []
+            }
+        ]
+    },
+    {
+        "name": "jdk.internal.misc.Unsafe",
+        "methods":
+        [
+            {
+                "name": "getUnsafe",
+                "parameterTypes":
+                []
+            }
+        ]
+    },
+    {
+        "name": "org.slf4j.Logger"
+    },
+    {
+        "name": "sun.misc.Unsafe",
+        "fields":
+        [
+            {
+                "name": "theUnsafe"
+            }
+        ],
+        "methods":
+        [
+            {
+                "name": "copyMemory",
+                "parameterTypes":
+                [
+                    "java.lang.Object",
+                    "long",
+                    "java.lang.Object",
+                    "long",
+                    "long"
+                ]
+            },
+            {
+                "name": "getAndAddLong",
+                "parameterTypes":
+                [
+                    "java.lang.Object",
+                    "long",
+                    "long"
+                ]
+            },
+            {
+                "name": "getAndSetObject",
+                "parameterTypes":
+                [
+                    "java.lang.Object",
+                    "long",
+                    "java.lang.Object"
+                ]
+            },
+            {
+                "name": "invokeCleaner",
+                "parameterTypes":
+                [
+                    "java.nio.ByteBuffer"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "sun.nio.ch.SelectorImpl",
+        "fields":
+        [
+            {
+                "name": "publicSelectedKeys"
+            },
+            {
+                "name": "selectedKeys"
+            }
+        ]
+    },
+    {
+        "name": "sun.security.provider.NativePRNG",
+        "methods":
+        [
+            {
+                "name": "<init>",
+                "parameterTypes":
+                []
+            }
+        ]
+    },
+    {
+        "name": "sun.security.provider.SHA",
+        "methods":
+        [
+            {
+                "name": "<init>",
+                "parameterTypes":
+                []
+            }
+        ]
+    },
+    {
+        "name": "sun.security.provider.SHA5$SHA512",
+        "methods":
+        [
+            {
+                "name": "<init>",
+                "parameterTypes":
+                []
+            }
+        ]
+    }
+]
