@@ -313,6 +313,83 @@ reflect-config.json	|	Reflection|
 resource-config.json|		Resources	|
 serialization-config.json	|	Serialization	|	
 
+#### 编译过程解析
+参考[文档](https://www.graalvm.org/latest/reference-manual/native-image/overview/BuildOutput/)
+
+[1/8] Initializing...                                                                                    (2.5s @ 0.23GB)
+> 初始化：   
+> ①确定可执行文件类型（share libraries or static)    
+> ②确定java版本信息(java.vm.version 和 java.vendor.version)   
+> ③确定编译器类型和参数   
+> ④GC类型（默认Serial GC） -- G1GC 不在 GraalVM 的社区版中   
+> ⑤确定编译过程使用多大的资源
+
+[2/8] Performing analysis...  [******]                                                                  (16.6s @ 2.64GB)
+> 分析：
+> 检查和分析所有的类、字段和方法，确定哪些是可达的（在程序运行时可能会用到的）。
+> 注册需要在运行时进行反射操作的类、字段和方法，以及需要在 JNI 中访问的类、字段和方法。
+
+[3/8] Building universe...                                                                               (3.0s @ 3.22GB)
+> 构建宇宙：   
+> A universe with all types, fields, and methods is built, which is then used to create the native binary.   
+> → 准备生成native文件的一切所需
+
+[4/8] Parsing methods...      [***]                                                                      (5.9s @ 3.63GB)
+> 解析方法：   
+> Graal compiler 解析所有可达方法，并把它们转化为 GraalVM 可以理解的中间表示。
+
+[5/8] Inlining methods...     [***]                                                                      (0.8s @ 3.76GB)
+> 内联方法, 减少方法调用的开销
+
+[6/8] Compiling methods...    [******]                                                                  (32.8s @ 2.33GB)
+> 编译方法：把所有的方法编译成本地机器码。
+
+[7/8] Layouting methods...    [**]                                                                       (4.9s @ 3.71GB)
+> 对类和其成员变量进行布局的过程, 确定每个类实例的内存布局，包括其中的成员变量及其在内存中的位置。
+
+[8/8] Creating image...       [**]                                                                       (4.0s @ 4.54GB)
+> 创建映像：把所有的代码、数据和资源打包成一个单一的可执行文件。
+
+
+- 一次典型的构建过程
+```
+[1/8] Initializing...                                                                                    (2.5s @ 0.23GB)
+Java version: 21.0.2+13-LTS, vendor version: Oracle GraalVM 21.0.2+13.1
+Graal compiler: optimization level: 2, target machine: x86-64-v3, PGO: ML-inferred
+C compiler: gcc (linux, x86_64, 11.4.0)
+Garbage collector: Serial GC (max heap size: 80% of RAM)
+2 user-specific feature(s):
+- com.oracle.svm.thirdparty.gson.GsonFeature
+- org.springframework.aot.nativex.feature.PreComputeFieldFeature
+------------------------------------------------------------------------------------------------------------------------
+5 experimental option(s) unlocked:
+- '-H:ReflectionConfigurationFiles' (origin(s): command line)
+- '-H:JNIConfigurationFiles' (origin(s): command line)
+- '-H:ResourceConfigurationResources' (origin(s): 'META-INF/native-image/org.apache.tomcat.embed/tomcat-embed-core/native-image.properties' in 'file:///home/zongkuiy/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.16/tomcat-embed-core-10.1.16.jar', 'META-INF/native-image/org.apache.tomcat.embed/tomcat-embed-el/native-image.properties' in 'file:///home/zongkuiy/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.16/tomcat-embed-el-10.1.16.jar', 'META-INF/native-image/org.apache.tomcat.embed/tomcat-embed-websocket/native-image.properties' in 'file:///home/zongkuiy/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.16/tomcat-embed-websocket-10.1.16.jar')
+- '-H:SerializationConfigurationFiles' (origin(s): command line)
+- '-H:ReflectionConfigurationResources' (origin(s): 'META-INF/native-image/org.apache.tomcat.embed/tomcat-embed-core/native-image.properties' in 'file:///home/zongkuiy/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.16/tomcat-embed-core-10.1.16.jar', 'META-INF/native-image/org.apache.tomcat.embed/tomcat-embed-el/native-image.properties' in 'file:///home/zongkuiy/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.16/tomcat-embed-el-10.1.16.jar', 'META-INF/native-image/org.apache.tomcat.embed/tomcat-embed-websocket/native-image.properties' in 'file:///home/zongkuiy/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.16/tomcat-embed-websocket-10.1.16.jar')
+------------------------------------------------------------------------------------------------------------------------
+Build resources:
+- 20.21GB of memory (64.9% of 31.13GB system memory, determined at start)
+- 17 thread(s) (100.0% of 17 available processor(s), determined at start)
+  SLF4J: No SLF4J providers were found.
+  SLF4J: Defaulting to no-operation (NOP) logger implementation
+  SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+  [2/8] Performing analysis...  [******]                                                                  (16.6s @ 2.64GB)
+  20,103 reachable types   (90.9% of   22,106 total)
+  31,329 reachable fields  (62.2% of   50,398 total)
+  109,481 reachable methods (61.5% of  178,140 total)
+  6,520 types, 1,265 fields, and 11,146 methods registered for reflection
+  69 types,    77 fields, and    61 methods registered for JNI access
+  4 native libraries: dl, pthread, rt, z
+  [3/8] Building universe...                                                                               (3.0s @ 3.22GB)
+  [4/8] Parsing methods...      [***]                                                                      (5.9s @ 3.63GB)
+  [5/8] Inlining methods...     [***]                                                                      (0.8s @ 3.76GB)
+  [6/8] Compiling methods...    [******]                                                                  (32.8s @ 2.33GB)
+  [7/8] Layouting methods...    [**]                                                                       (4.9s @ 3.71GB)
+  [8/8] Creating image...       [**]                                                                       (4.0s @ 4.54GB)
+```
+
 ### 怎么在实际项目中用起来
 
 > 关键：第三方库是不是支持
