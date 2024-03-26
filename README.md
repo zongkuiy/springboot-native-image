@@ -102,7 +102,7 @@ block-beta
         columns 1
         app3("App3") jre3("JRE/JDK")
     end
-    操作系统:3
+    k8s:3
     物理机/虚拟机:3
 ```
 
