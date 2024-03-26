@@ -353,9 +353,9 @@ TBD
 |Native	|26.898|	26.898|	37177.37|	2743|	17	|20|	1026|
 
 ##### CPU 对比
-![](.\imgs\n100w_c1000_tomcatmax2000.cpu.png)
+![](./imgs/n100w_c1000_tomcatmax2000.cpu.png)
 ##### Mem 对比
-![](.\imgs\n100w_c1000_tomcatmax2000.mem.png)
+![](./imgs/n100w_c1000_tomcatmax2000.mem.png)
 
 
 #### scenario 2: 2000并发, 共1kw次, tomcat最大线程数2000
@@ -367,10 +367,10 @@ TBD
 
 
 ##### CPU 对比
-![](.\imgs\n1000w_c2000_tomcatmax2000.cpu.png)
+![](./imgs/n1000w_c2000_tomcatmax2000.cpu.png)
 
 ##### Mem 对比
-![](.\imgs\n1000w_c2000_tomcatmax2000.mem.png)
+![](./imgs/n1000w_c2000_tomcatmax2000.mem.png)
 
 #### scenario 3: 5000并发, 共1kw次, tomcat最大线程数2000
 
@@ -380,10 +380,10 @@ TBD
 |Native	|312.032	|156.016	|32048.03	|58936	|131	|1077	|2111|
 
 ##### CPU 对比
-![](.\imgs\n1000w_c5000_tomcatmax2000.cpu.png)
+![](./imgs/n1000w_c5000_tomcatmax2000.cpu.png)
 
 ##### Mem 对比
-![](.\imgs\n1000w_c5000_tomcatmax2000.mem.png)
+![](./imgs/n1000w_c5000_tomcatmax2000.mem.png)
 
 #### 性能测试结论
 - Native 启动时间和内存占用优势遥遥领先
