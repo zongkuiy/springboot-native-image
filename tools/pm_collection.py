@@ -1,17 +1,22 @@
-# 使用 psutil 获取目标进程的 CPU 和 memory 使用情况
+# Usage:
+#     pm_collection.py <test_case_name>  <process_id> <jar|native>
+# eg: pm_collection.py n1000w_c5000_tomcatthread1000  15222 jar
+import sys
 import time
 import psutil
 import os
 
-# 替换为目标进程号
-pid = 38740
+
+type = sys.argv[3]
+pid = int(sys.argv[2])
+outname =  (sys.argv[1])
 
 p = psutil.Process(pid)
-
-filename = f'{p.name().split(".")[0]}_{pid}.csv'
+current_time = time.strftime("%H:%M:%S", time.localtime(time.time()))
+filename = f'{outname}_{current_time}.{type}.csv'
 
 f = open(filename, "a+")
-f.write("TIME,%CPU,%MEM\n")
+f.write("TIME,%CPU,MEM\n")
 f.close()
 
 while True:
