@@ -1,0 +1,55 @@
+zongkuiy@zongkuiy-ubuntu:~/springboot-native-image/bin/native$ date;ab -n 10000000 -c 2000 http://127.0.0.1:9999/api/demo/case1
+2024年 03月 21日 星期四 17:07:45 CST
+This is ApacheBench, Version 2.3 <$Revision: 1879490 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+Completed 1000000 requests
+Completed 2000000 requests
+Completed 3000000 requests
+Completed 4000000 requests
+Completed 5000000 requests
+Completed 6000000 requests
+Completed 7000000 requests
+Completed 8000000 requests
+Completed 9000000 requests
+Completed 10000000 requests
+Finished 10000000 requests
+
+
+Server Software:        
+Server Hostname:        127.0.0.1
+Server Port:            9999
+
+Document Path:          /api/demo/case1
+Document Length:        441 bytes
+
+Concurrency Level:      2000
+Time taken for tests:   282.723 seconds
+Complete requests:      10000000
+Failed requests:        0
+Total transferred:      5460000000 bytes
+HTML transferred:       4410000000 bytes
+Requests per second:    35370.25 [#/sec] (mean)
+Time per request:       56.545 [ms] (mean)
+Time per request:       0.028 [ms] (mean, across all concurrent requests)
+Transfer rate:          18859.53 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0   39 180.3     10    3096
+Processing:     0   17  51.7     15   13202
+Waiting:        0   13  51.6     11   13195
+Total:          0   56 190.7     25   14240
+
+Percentage of the requests served within a certain time (ms)
+  50%     25
+  66%     32
+  75%     35
+  80%     37
+  90%     42
+  95%     48
+  98%   1040
+  99%   1057
+ 100%  14240 (longest request)

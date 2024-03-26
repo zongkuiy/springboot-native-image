@@ -19,3 +19,9 @@ spring:
   resources:
   jackson:
     time-zone: GMT+8
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

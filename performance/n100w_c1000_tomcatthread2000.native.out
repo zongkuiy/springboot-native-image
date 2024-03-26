@@ -1,0 +1,166 @@
+zongkuiy@zongkuiy-ubuntu:~/springboot-native-image/bin/native$ date;ab -n 1000000 -c 1000 http://127.0.0.1:9999/api/demo/case1
+2024年 03月 21日 星期四 16:51:55 CST
+This is ApacheBench, Version 2.3 <$Revision: 1879490 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+Completed 100000 requests
+Completed 200000 requests
+Completed 300000 requests
+Completed 400000 requests
+Completed 500000 requests
+Completed 600000 requests
+Completed 700000 requests
+Completed 800000 requests
+Completed 900000 requests
+Completed 1000000 requests
+Finished 1000000 requests
+
+
+Server Software:        
+Server Hostname:        127.0.0.1
+Server Port:            9999
+
+Document Path:          /api/demo/case1
+Document Length:        441 bytes
+
+Concurrency Level:      1000
+Time taken for tests:   26.898 seconds
+Complete requests:      1000000
+Failed requests:        0
+Total transferred:      546000000 bytes
+HTML transferred:       441000000 bytes
+Requests per second:    37177.37 [#/sec] (mean)
+Time per request:       26.898 [ms] (mean)
+Time per request:       0.027 [ms] (mean, across all concurrent requests)
+Transfer rate:          19823.09 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0   19 123.1      4    2059
+Processing:     0    8  20.1      7    1714
+Waiting:        0    6  20.1      5    1713
+Total:          0   26 128.0     11    2743
+
+Percentage of the requests served within a certain time (ms)
+  50%     11
+  66%     13
+  75%     14
+  80%     15
+  90%     17
+  95%     20
+  98%     38
+  99%   1026
+ 100%   2743 (longest request)
+zongkuiy@zongkuiy-ubuntu:~/springboot-native-image/bin/native$ date;ab -n 1000000 -c 1000 http://127.0.0.1:9999/api/demo/case1
+2024年 03月 21日 星期四 16:52:34 CST
+This is ApacheBench, Version 2.3 <$Revision: 1879490 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+Completed 100000 requests
+Completed 200000 requests
+Completed 300000 requests
+Completed 400000 requests
+Completed 500000 requests
+Completed 600000 requests
+Completed 700000 requests
+Completed 800000 requests
+Completed 900000 requests
+Completed 1000000 requests
+Finished 1000000 requests
+
+
+Server Software:        
+Server Hostname:        127.0.0.1
+Server Port:            9999
+
+Document Path:          /api/demo/case1
+Document Length:        441 bytes
+
+Concurrency Level:      1000
+Time taken for tests:   25.923 seconds
+Complete requests:      1000000
+Failed requests:        0
+Total transferred:      546000000 bytes
+HTML transferred:       441000000 bytes
+Requests per second:    38575.64 [#/sec] (mean)
+Time per request:       25.923 [ms] (mean)
+Time per request:       0.026 [ms] (mean, across all concurrent requests)
+Transfer rate:          20568.65 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0   19 133.4      3    3059
+Processing:     0    6   5.2      6     422
+Waiting:        0    5   5.1      4     421
+Total:          1   25 134.2      9    3075
+
+Percentage of the requests served within a certain time (ms)
+  50%      9
+  66%     11
+  75%     12
+  80%     12
+  90%     15
+  95%     17
+  98%     35
+  99%   1023
+ 100%   3075 (longest request)
+zongkuiy@zongkuiy-ubuntu:~/springboot-native-image/bin/native$ date;ab -n 1000000 -c 1000 http://127.0.0.1:9999/api/demo/case1
+2024年 03月 21日 星期四 16:53:13 CST
+This is ApacheBench, Version 2.3 <$Revision: 1879490 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+Completed 100000 requests
+Completed 200000 requests
+Completed 300000 requests
+Completed 400000 requests
+Completed 500000 requests
+Completed 600000 requests
+Completed 700000 requests
+Completed 800000 requests
+Completed 900000 requests
+Completed 1000000 requests
+Finished 1000000 requests
+
+
+Server Software:        
+Server Hostname:        127.0.0.1
+Server Port:            9999
+
+Document Path:          /api/demo/case1
+Document Length:        441 bytes
+
+Concurrency Level:      1000
+Time taken for tests:   26.358 seconds
+Complete requests:      1000000
+Failed requests:        0
+Total transferred:      546000000 bytes
+HTML transferred:       441000000 bytes
+Requests per second:    37939.17 [#/sec] (mean)
+Time per request:       26.358 [ms] (mean)
+Time per request:       0.026 [ms] (mean, across all concurrent requests)
+Transfer rate:          20229.28 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0   20 129.0      3    2060
+Processing:     0    6   4.3      6     219
+Waiting:        0    5   4.2      4     217
+Total:          1   26 129.6      9    2072
+
+Percentage of the requests served within a certain time (ms)
+  50%      9
+  66%     11
+  75%     12
+  80%     12
+  90%     14
+  95%     17
+  98%     40
+  99%   1025
+ 100%   2072 (longest request)
+

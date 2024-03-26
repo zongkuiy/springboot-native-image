@@ -20,5 +20,12 @@ public class DemoController {
 
     }
 
+    @RequestMapping(value = "/case2", method = RequestMethod.GET)
+    @ResponseBody
+    public Object case2() {
+        return "";
+
+    }
+
 }
 
