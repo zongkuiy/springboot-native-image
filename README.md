@@ -152,7 +152,9 @@ block-beta
 一个空的Spring Web内存占用约为100MB左右，作为对比，一个golang的Web应用在10MB左右
 ```
 
-***但是*** 云原生恰恰需要的是：快速灵活的启动、销毁
+***但是*** 云原生恰恰需要的是：   
+① 快速灵活的启动、销毁   
+② 快速进入峰值性能状态
 
 ### 如何应对？ AOT/Native Image/GraalVM
 
@@ -162,12 +164,23 @@ block-beta
 AOT在不同的场景有不同的含义， 这里我们先限定在Java世界
 ```
 
-2. GraalVM 的 Native Image   
-没有了JVM， Substrate VM来代替
-- 内存管理（GC）
-- 线程调度
-- JNI 支持
-- Exception
+2. GraalVM 的 Native Image
++ GraalVM发展历史 参考[GraalVM Wiki](https://en.wikipedia.org/wiki/GraalVM)
+```mermaid
+flowchart LR
+   MVM(MaxineVM by Sun \n java实现JVM)  --> GraalVM(GraalVM\n将C1的产出物再转成Native)  -->  OpenJDK1(openjdk9~15\n开启UseJVMCICompiler时可代替原来的C2)                                 
+   
+   OpenJDK --> C(GraalVM Community Edtion)
+   OracleJDK --> E(GraalVM Enterprise Edtion)
+```
+
++ 用处
+  - GraalVM can compile a Java application ahead of time
+  - 使用Substrate VM替代JVM
+    - 内存管理（GC）
+    - 线程调度
+    - JNI 支持
+    - Exception
 
 ### GraalVM优势
 + 构建阶段, 生成可直接运行的本地代码
@@ -182,18 +195,20 @@ flowchart LR
 ```
 编译时已保存初始化好的堆快照
 ```
-- 超快的启动时间
-  ![bootime](./imgs/boot_time.png)
+
+  
 + 运行阶段
+    - 超快的启动时间
+      ![bootime](./imgs/boot_time.png)
+    - 在启动时即可达到峰值性能，不需要预热时间
+      - 传统JDK很难做到(流量重放，魔改JDK) 
     - 降低内存占用   
       ![quarkus_mem](./imgs/mem_quarkus.png)
 
       ![quarkus_crud_mem](./imgs/mem_crud_quarkus.png)
 
-
-
-- 降低CPU占用
-- 在启动时即可达到峰值性能，不需要预热时间
+    - 降低CPU占用
+    
 
 ### 功能有何区别
 有些功能需要特别进行配置
